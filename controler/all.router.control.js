@@ -7,6 +7,7 @@ const showBlogPage = (req, res)=>{
 
 const showregisterPage = (req, res)=>{
     res.render("register", {title : "Register"})
+    
 }
 const showloginPage = (req, res)=>{
     res.render("login", {title : "Login"})
@@ -14,11 +15,26 @@ const showloginPage = (req, res)=>{
 const showProfilePage = (req, res)=>{
     res.render("profile", {title : "Profile"})
 }
+const postregisterPage = (req, res)=>{
+    try{
+        res.send(req.body)
+        console.log(req.body)
+    }catch(err){
+        res.send(err)
+    }
+}
+
+const postloginPage = (req, res)=>{
+
+}
+
 
 module.exports = {
     homePageShow,
     showBlogPage,
     showregisterPage,
     showloginPage,
-    showProfilePage
+    showProfilePage,
+    postregisterPage,
+    postloginPage
 }
