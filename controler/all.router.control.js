@@ -1,3 +1,5 @@
+const express = require("express")
+
 const homePageShow = (req, res)=>{
     res.render("home", {title : "Home"})
 }
@@ -15,6 +17,7 @@ const showloginPage = (req, res)=>{
 const showProfilePage = (req, res)=>{
     res.render("profile", {title : "Profile"})
 }
+
 const postregisterPage = (req, res)=>{
     try{
         res.send(req.body)
@@ -24,8 +27,10 @@ const postregisterPage = (req, res)=>{
     }
 }
 
-const postloginPage = (req, res)=>{
-
+const postloginPage =  (req, res)=>{
+    const email =  req.body.password;
+    res.send(email)
+    console.log(email)
 }
 
 
